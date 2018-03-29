@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://java.sun.com/xml/ns/persistence/orm">
+<head>
+    <meta charset="UTF-8">
+    <title>customerindex</title>
+</head>
+<body>
+<table border="1" width="400">
+    <tr>
+        <th colspan="3" align="center">Messages</th>
+    </tr>
+    <tr>
+        <td>Id</td>
+        <td>Message</td>
+        <td>Opt</td>
+    </tr>
+    <tr th:each="m,index: ${pos}">
+        <td th:text="${m.id}"></td>
+        <td th:text="${m.name}"></td>
+        <td><a th:href="'/delete/' + ${m.id }">delete</a></td>
+    </tr>
+</table>
+
+</body>
+</html>
